@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+from __future__ import annotations
+
+import os, sqlite3, tempfile, re
+import pandas as pd
+import streamlit as st
+
 def compute_diff(dfA: pd.DataFrame, dfB: pd.DataFrame, keys: list[str], compare_cols: list[str]):
     # 正規化
     A = normalize(dfA[keys + compare_cols])
